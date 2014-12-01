@@ -11,3 +11,5 @@
 1. Copy/past the `.tmLanguage` file or clone this repository into the `sublime-text/Packages/User` directory
 
 `.hx` files should now be opened with HACS syntax highlighting.
+
+![Screenshot](/hacs_screenshot.png?raw=true "Screenshot")
