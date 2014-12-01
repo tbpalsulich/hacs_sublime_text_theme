@@ -1,0 +1,60 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: HACS
+scopeName: source.hacs
+fileTypes: ["hx"]
+uuid: 11503641-06bd-41df-82cf-eb75f93f5af1
+
+# This file defines how to assign a scope (name) to bits source code via regular expressions.
+# Color themes assign colors to scopes.
+
+# To test the right scope is being applied, you can press ctrl+shift+alt+p to see the scope of 
+# the word under the cursor. To see common scope names, visit http://manual.macromates.com/en/language_grammars.html.
+
+patterns:
+- match: "(sort|scheme|attribute)"
+  name: "keyword.control"
+- match: "(token|fragment)"
+  name: "keyword.operator"
+- match: "\\|"
+  name: "storage.type"
+- match: "(@[0-9]+|#[A-Za-z0-9]+)"
+  name: "constant.language"
+# Begin/End patterns match everything between the begin and end regexes.
+# But, you can define recursive subpatterns to match within them.
+- name: "entity.name.function"
+  begin: ([A-Z][A-Za-z]*\()
+  end: \)
+  patterns:
+  - include: '#hash_symbols'
+  - include: '#special_characters'
+  - include: '#strings'
+  - match: ([A-Z][A-Za-z]*)
+    name: "variable.parameter"
+- include: '#special_characters'
+- include: '#strings'
+- name: "comment.block"
+  begin: "/\\*"
+  end: "\\*/"
+- match: "//.*"
+  name: "comment.line.double-slash"
+
+repository:
+  hash_symbols:
+    match: "(@[0-9]+|#[A-Za-z0-9]*)"
+    name: "constant.language"
+  special_characters:
+    name: "constant.character"
+    match: "[↑↓→]"
+  strings:
+    name: "string"
+    begin: "⟦"
+    end: "⟧"
+    patterns:
+    - begin: "⟨"
+      end: "⟩"
+      name: "variable.parameter"
+      patterns:
+      - include: '#hash_symbols'
+      - include: '#special_characters'
+...
