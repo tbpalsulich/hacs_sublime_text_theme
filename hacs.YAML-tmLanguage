@@ -33,6 +33,7 @@ patterns:
     name: "variable.parameter"
 - include: '#special_characters'
 - include: '#strings'
+- include: '#hash_symbols'
 - name: "comment.block"
   begin: "/\\*"
   end: "\\*/"
