@@ -13,3 +13,6 @@
 `.hx` files should now be opened with HACS syntax highlighting.
 
 ![Screenshot](/hacs_screenshot.png?raw=true "Screenshot")
+
+# Licence
+Apache 2.0. See the LICENCE file.
