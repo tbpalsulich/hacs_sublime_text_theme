@@ -8,9 +8,8 @@
 5. Press `f7` to build
 
 ### User
-1. Copy/past the `.tmLanguage` file or clone this repository into the `sublime-text/Packages/User` directory
-
-`.hx` files should now be opened with HACS syntax highlighting.
+1. Install the Sublime Text package manager.
+1. Install [HACS Syntax](https://packagecontrol.io/packages/HACS%20Syntax) from [Package Control](https://packagecontrol.io/).
 
 ![Screenshot](/hacs_screenshot.png?raw=true "Screenshot")
 
